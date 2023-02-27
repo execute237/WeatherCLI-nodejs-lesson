@@ -19,4 +19,13 @@ const printHelp = () => {
     `)
 };
 
-export {printError,printSuccess, printHelp};
+const printWeather = (res) => {
+    console.log(dedent`${chalk.bgYellow('ПОГОДА')}
+    ${res.name}
+    ${res.weather[0].description}
+    Температура: ${res.main.temp}
+    Ощущается как ${res.main.feels_like}
+    `);
+}
+
+export {printError,printSuccess, printHelp,printWeather};
